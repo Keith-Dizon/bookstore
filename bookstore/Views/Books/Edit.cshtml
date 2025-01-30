@@ -1,0 +1,36 @@
+﻿@model bookstore.Models.Book
+
+<h1>Edit Book</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Title</label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title" style="color:red;"></span>
+    </div>
+
+    <div>
+        <label>Author</label>
+        <input asp-for="Author" />
+        <span asp-validation-for="Author" style="color:red;"></span>
+    </div>
+    <br />
+    <div>
+        <label>Price</label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price" style="color:red;"></span>
+    </div>
+
+    <div>
+        <br />
+        <label>Publication Year</label>
+        <input asp-for="PublicationYear" />
+        <span asp-validation-for="PublicationYear" style="color:red;"></span>
+    </div>
+
+    <button type="submit">Save Changes</button>
+</form>
+
+<a href="@Url.Action("Index", "Books")">Back to List</a>
